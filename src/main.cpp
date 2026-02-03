@@ -1,9 +1,22 @@
 #include <iostream>
+#include "fileHandler.h"
+#include "caesarCipher.h"
 void mainMenu();
 void decryptionMenu();
 void encryptionMenu();
 int main(){
-    mainMenu();
+    //mainMenu();
+    FileHandler fileHandler = FileHandler("text.txt", "");
+    //std::cout << fileHandler.readFile();
+    CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
+    std::cout << caesarCipher.getDecryptedText();
+    caesarCipher.encrypt();
+    std::cout << caesarCipher.getEncryptedText();
+    // std::cout << caesarCipher.getEncryptedText();
+    // std::cout << caesarCipher.getEncryptedText();
+    // std::cout << caesarCipher.getEncryptedText();
+
+
     return 0;
 }
 

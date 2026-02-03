@@ -15,8 +15,8 @@ std::string FileHandler::readFile(){
     std::string line;
 
     while(std::getline(file, line))
-        readFileContents += line + "\n";
-
+        //readFileContents += line + "\n";  // IF YOU WANT TO PRESERVE NEW LINES IN ORIGINAL TEXT
+        readFileContents += line;
     // testing
     //std::cout << readFileContents;
     file.close();    
