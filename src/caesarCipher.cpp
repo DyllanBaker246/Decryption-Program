@@ -13,17 +13,16 @@ std::string CaesarCipher::getEncryptedText(){
     return encryptedText;
 }
 
-void CaesarCipher::encrypt(){
+void CaesarCipher::encrypt(int shift){
     char temp;
     //std::string encryptTxt = "";
     encryptedText = ""; // clear value in encrypted text
     for(int i = 0; i < decryptedText.size(); i++){
         temp = decryptedText[i];
-        temp = temp + 1;
+        temp = (temp + shift) % 127;
+        if(temp < 32)
+            temp += 32;
         encryptedText += temp;
-
-        //std::cout << encryptedText[i];
-        
     }
 }
 

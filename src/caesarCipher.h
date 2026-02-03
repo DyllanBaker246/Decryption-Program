@@ -10,7 +10,7 @@ class CaesarCipher{
         CaesarCipher(std::string d, std::string e);
         std::string getDecryptedText();
         std::string getEncryptedText();
-        void encrypt();
+        void encrypt(int shift);
         void decrypt();
 };
 #endif
