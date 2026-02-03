@@ -11,6 +11,6 @@ class CaesarCipher{
         std::string getDecryptedText();
         std::string getEncryptedText();
         void encrypt(int shift);
-        void decrypt();
+        void decrypt(int shift);
 };
 #endif

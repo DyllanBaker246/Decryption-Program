@@ -26,6 +26,23 @@ void CaesarCipher::encrypt(int shift){
     }
 }
 
-void CaesarCipher::decrypt(){
+void CaesarCipher::decrypt(int shift){
+    char temp;
+    //std::string encryptTxt = "";
+    decryptedText = ""; // clear value in decrypted text
+    for(int i = 0; i < encryptedText.size(); i++){
+        temp = encryptedText[i];
+        // need to account for negative numbers
+        temp = (temp - shift) % 127;
 
+        // if(temp < 0){
+        //     temp = temp * -1;
+        //     temp = temp % 127;
+        //     temp = temp * -1;
+        // }else
+        //     temp = temp % 127;
+        if(temp < 32)
+            temp -= 127;
+        decryptedText += std::abs(temp);
+    }
 }

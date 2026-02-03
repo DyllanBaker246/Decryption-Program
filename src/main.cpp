@@ -10,11 +10,10 @@ int main(){
     //std::cout << fileHandler.readFile();
     CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
     std::cout << caesarCipher.getDecryptedText();
-    caesarCipher.encrypt(27);
+    caesarCipher.encrypt(20);
     std::cout << caesarCipher.getEncryptedText();
-    // std::cout << caesarCipher.getEncryptedText();
-    // std::cout << caesarCipher.getEncryptedText();
-    // std::cout << caesarCipher.getEncryptedText();
+    caesarCipher.decrypt(20);
+    std::cout << caesarCipher.getDecryptedText();
 
 
     return 0;
