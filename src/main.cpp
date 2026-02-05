@@ -6,14 +6,11 @@ void decryptionMenu();
 void encryptionMenu();
 int main(){
     //mainMenu();
-    FileHandler fileHandler = FileHandler("text.txt", "");
-    //std::cout << fileHandler.readFile();
+    FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
     CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
-    std::cout << caesarCipher.getDecryptedText();
-    caesarCipher.encrypt(20);
-    std::cout << caesarCipher.getEncryptedText();
-    caesarCipher.decrypt(20);
-    std::cout << caesarCipher.getDecryptedText();
+    caesarCipher.encrypt(3);
+    // caesarCipher.decrypt(3);
+    fileHandler.writeFile(caesarCipher.getEncryptedText());
 
 
     return 0;
