@@ -9,6 +9,8 @@ class Node{
         char letter;
         std::vector<Node*> nextLetters;
     public:
+        Node(char);
+            // Node constructor
         char getLetter();
             // returns letter
         Node* findLetter(char);
