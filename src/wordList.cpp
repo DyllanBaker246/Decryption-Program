@@ -17,3 +17,12 @@ Node* Node::findLetter(char c){
 char Node::getLetter(){
     return letter;
 }
+
+// Word list class
+WordList::WordList(std::string fileName){
+
+}
+
+bool WordList::findWord(std::string str){
+    return true;
+}
