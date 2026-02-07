@@ -2,6 +2,7 @@
 #define WORD_LIST.H
 #include <vector>
 #include <iostream>
+#include <fstream>
 class Node{
         // Class Node serves as the individual nodes to a search tree
         // tree stores a database of words
