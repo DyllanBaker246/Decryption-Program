@@ -22,6 +22,8 @@ char Node::getLetter(){
 WordList::WordList(std::string fileName){
     std::ifstream file(fileName); // open file
     std::string line; // stores string at the given line
+    Node* temp;
+    bool foundFirstLetter = false;
     while(std::getline(file, line)){
 
         // loop through chars of word to be added
@@ -30,6 +32,16 @@ WordList::WordList(std::string fileName){
         //  continue
         // if char is not found
         //  create new node, add to nextLetters of prior node
+        for(int i = 0; i < searchTree.size(); i++){
+            if(searchTree[i]->getLetter() == line[i]){
+                temp = searchTree[i];
+                foundFirstLetter = true;
+                break;
+            }
+        }
+        if(!foundFirstLetter){
+            temp = Node(line[0]);
+        }
         for(int i = 0; i < line.size(); i++){
 
         }
