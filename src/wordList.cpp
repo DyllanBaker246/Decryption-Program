@@ -1,4 +1,22 @@
 #include "wordList.h"
+// Word Vector Class ***********************************************
+WordVector::WordVector(std::string fileName){
+    std::ifstream file(fileName);
+    std::string line;
+
+    while(std::getline(file, line)){
+        wordList.push_back(line);
+    }
+    file.close();
+}
+
+void WordVector::printWordVector(){
+    for(int i = 0; i < wordList.size(); i++)
+        std::cout << wordList[i] << '\n';
+}
+
+// ****************************************************************
+
 // Node Class
 Node::Node(char c){
     letter = c;
@@ -40,7 +58,7 @@ WordList::WordList(std::string fileName){
             }
         }
         if(!foundFirstLetter){
-            temp = Node(line[0]);
+            //temp = Node(line[0]);
         }
         for(int i = 0; i < line.size(); i++){
 

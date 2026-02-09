@@ -1,16 +1,19 @@
 #include <iostream>
 #include "fileHandler.h"
 #include "caesarCipher.h"
+#include "wordList.h"
 void mainMenu();
 void decryptionMenu();
 void encryptionMenu();
 int main(){
     //mainMenu();
-    FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
-    CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
-    caesarCipher.encrypt(3);
+    //FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
+    //CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
+    //caesarCipher.encrypt(3);
     // caesarCipher.decrypt(3);
-    fileHandler.writeFile(caesarCipher.getEncryptedText());
+    //fileHandler.writeFile(caesarCipher.getEncryptedText());
+    WordVector wordVector = WordVector("wordList.txt");
+    wordVector.printWordVector();
 
 
     return 0;
