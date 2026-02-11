@@ -3,7 +3,16 @@ Program will take file as input, perform decryption algorithm, and give confiden
 # Class Descriptions:
 ## Caesar Cipher
 - Given plain text, shifts chars based on integer value
-- NOTE: CURRENT PATCH (2/4/26) ONLY WORKS WITH CAPITAL LETTERS (ascii values 65-90) with a max shift of +35
+- NOTE: CURRENT PATCH (2/10/26) works with all ascii values, SHIFT > 128
+### Functions
+#### CaesarCipher
+- Constructor, creates object passed plain or encrypted text
+#### void encrypt(int shift)
+- shifts plain text by "shift"
+- encrypted text is stored in encryptedText
+#### void decrypt(int shift)
+- shifts encrypted text by negative "shift"
+- new string is stored in decrypted text
 ## Word Vector (V 1.0 - 2/8/26)
 - first version to store word data set, simple linear vector
 - Functions:

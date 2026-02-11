@@ -7,13 +7,13 @@ void decryptionMenu();
 void encryptionMenu();
 int main(){
     //mainMenu();
-    //FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
-    //CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
-    //caesarCipher.encrypt(3);
-    // caesarCipher.decrypt(3);
-    //fileHandler.writeFile(caesarCipher.getEncryptedText());
-    WordVector wordVector = WordVector("wordList.txt");
-    wordVector.printWordVector();
+    FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
+    CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
+    caesarCipher.encrypt(1000);
+     caesarCipher.decrypt(1000);
+    fileHandler.writeFile(caesarCipher.getDecryptedText());
+    //WordVector wordVector = WordVector("wordList.txt");
+    //wordVector.printWordVector();
 
 
     return 0;
