@@ -2,6 +2,7 @@
 #include "fileHandler.h"
 #include "caesarCipher.h"
 #include "wordList.h"
+#include "codeBreaker.h"
 void mainMenu();
 void decryptionMenu();
 void encryptionMenu();
@@ -9,12 +10,16 @@ int main(){
     //mainMenu();
     FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
     CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
-    caesarCipher.encrypt(1000);
-     caesarCipher.decrypt(1000);
-    fileHandler.writeFile(caesarCipher.getDecryptedText());
+    caesarCipher.encrypt(1434);
+    // caesarCipher.decrypt(1000);
+    // fileHandler.writeFile(caesarCipher.getDecryptedText());
     //WordVector wordVector = WordVector("wordList.txt");
     //wordVector.printWordVector();
+    CodeBreaker codeBreaker = CodeBreaker(caesarCipher.getEncryptedText(), "wordList.txt");
+    std::cout << codeBreaker.findShift(2000);
 
+    caesarCipher.decrypt(154);
+    std::cout << caesarCipher.getDecryptedText();
 
     return 0;
 }

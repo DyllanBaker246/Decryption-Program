@@ -5,6 +5,19 @@ CaesarCipher::CaesarCipher(std::string dTxt, std::string eTxt){
     decryptedText = dTxt;
 }
 
+CaesarCipher::CaesarCipher(){
+    encryptedText = "";
+    decryptedText = "";
+}
+
+void CaesarCipher::setPlainText(std::string str){
+    decryptedText = str;
+}
+
+void CaesarCipher::setEncryptedText(std::string str){
+    encryptedText = str;
+}
+
 std::string CaesarCipher::getDecryptedText(){
     return decryptedText;
 }
