@@ -10,16 +10,17 @@ int main(){
     //mainMenu();
     FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
     CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
-    caesarCipher.encrypt(1434);
+    caesarCipher.encrypt(1000);
     // caesarCipher.decrypt(1000);
     // fileHandler.writeFile(caesarCipher.getDecryptedText());
     //WordVector wordVector = WordVector("wordList.txt");
     //wordVector.printWordVector();
     CodeBreaker codeBreaker = CodeBreaker(caesarCipher.getEncryptedText(), "wordList.txt");
-    std::cout << codeBreaker.findShift(2000);
-
-    caesarCipher.decrypt(154);
+    caesarCipher.decrypt(codeBreaker.findShift(1000000));
     std::cout << caesarCipher.getDecryptedText();
+
+    //caesarCipher.decrypt();
+    //std::cout << caesarCipher.getDecryptedText();
 
     return 0;
 }
