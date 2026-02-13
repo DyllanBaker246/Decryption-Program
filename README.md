@@ -1,5 +1,9 @@
 # Decryption-Program
 Program will take file as input, perform decryption algorithm, and give confidence report based on similarity between known word data set.
+# To Do List:
+- create ui for encryption menu
+- create ui for decryption menu
+- CodeBreaker::findshift works with multiple words
 # Class Descriptions:
 ## Caesar Cipher
 - Given plain text, shifts chars based on integer value
