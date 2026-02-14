@@ -7,17 +7,13 @@ void mainMenu();
 void decryptionMenu();
 void encryptionMenu();
 int main(){
-    //mainMenu();
-    FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
-    CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
-    caesarCipher.encrypt(1000);
-    // caesarCipher.decrypt(1000);
-    // fileHandler.writeFile(caesarCipher.getDecryptedText());
-    //WordVector wordVector = WordVector("wordList.txt");
-    //wordVector.printWordVector();
-    CodeBreaker codeBreaker = CodeBreaker(caesarCipher.getEncryptedText(), "wordList.txt");
-    caesarCipher.decrypt(codeBreaker.findShift(1000000));
-    std::cout << caesarCipher.getDecryptedText();
+    mainMenu();
+    // FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
+    // CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
+    // caesarCipher.encrypt(1000);
+    // CodeBreaker codeBreaker = CodeBreaker(caesarCipher.getEncryptedText(), "wordList.txt");
+    // caesarCipher.decrypt(codeBreaker.findShift(1000000));
+    // std::cout << caesarCipher.getDecryptedText();
 
     //caesarCipher.decrypt();
     //std::cout << caesarCipher.getDecryptedText();
@@ -26,23 +22,31 @@ int main(){
 }
 
 void encryptionMenu(){
-    char choice;
+    std::string input;
     // encryption menu
-    do{
-        system("clear");
-        //            1         1         1         1         1         1         1
-        std::cout << "=============================================================\n";
-        std::cout << "=                                                           =\n";
-        std::cout << "=                        Encryption                         =\n";
-        std::cout << "=                                                           =\n";
-        std::cout << "=                     Nothing to See here                   =\n";
-        std::cout << "=                                                           =\n";
-        std::cout << "=                      press 1 to quit                      =\n";
-        std::cout << "=                                                           =\n";
-        std::cout << "=                                                           =\n";
-        std::cout << "=============================================================\n";
-        std::cin >> choice;
-    }while(choice != '1');
+    system("clear");
+    //            1         1         1         1         1         1         1
+    std::cout << "=============================================================\n";
+    std::cout << "=                                                           =\n";
+    std::cout << "=                        Encryption                         =\n";
+    std::cout << "=                                                           =\n";
+    std::cout << "=          Press 'e' at anytime to return to main menu      =\n";
+    std::cout << "=             Please enter file name to be encrypted:       =\n";
+    std::getline(std::cin, input);
+    std::cin.ignore();
+    if(input == "e")
+        return;
+    std::cout << "=       Please enter file for encrypted text to be written: =\n";
+    std::getline(std::cin, input);
+    std::cin.ignore();
+    if(input == "e")
+        return;
+    
+    // ENCRYPTION COOL STUFF HERE **************************
+    std::cout << "=                  File sucessfully encrypted!              =\n";
+    std::cout << "=                Press anything to return to menu:          =\n";
+    std::getline(std::cin, input);
+    std::cin.ignore();
     return;
 }
 
