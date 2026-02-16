@@ -9,9 +9,11 @@ int CodeBreaker::findShift(int max){
     for(int i = 0; i < max; i++){
         caesarCipher.decrypt(i);
         if(wordList.findString(caesarCipher.getDecryptedText())){
-            std::cout << "Found! Shift:" << i << "\n";
+            std::cout << "Shift: " << i << " | [xxxxxxxxxx] 100%\n";
             return i;
         }
+
+        std::cout << "Shift: " << i << " | [----------] 0%\n";
     }
     return -1;
 }

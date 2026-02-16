@@ -7,12 +7,12 @@ void mainMenu();
 void decryptionMenu();
 void encryptionMenu();
 int main(){
-    mainMenu();
-    // FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
-    // CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
-    // caesarCipher.encrypt(1000);
-    // CodeBreaker codeBreaker = CodeBreaker(caesarCipher.getEncryptedText(), "wordList.txt");
-    // caesarCipher.decrypt(codeBreaker.findShift(1000000));
+    //mainMenu();
+    FileHandler fileHandler = FileHandler("text.txt", "encrypted.txt");
+    CaesarCipher caesarCipher = CaesarCipher(fileHandler.readFile(), "");
+    caesarCipher.encrypt(1000);
+    CodeBreaker codeBreaker = CodeBreaker(caesarCipher.getEncryptedText(), "wordList.txt");
+    caesarCipher.decrypt(codeBreaker.findShift(1000000));
     // std::cout << caesarCipher.getDecryptedText();
 
     //caesarCipher.decrypt();
@@ -43,6 +43,7 @@ void encryptionMenu(){
         return;
     
     // ENCRYPTION COOL STUFF HERE **************************
+    
     std::cout << "=                  File sucessfully encrypted!              =\n";
     std::cout << "=                Press anything to return to menu:          =\n";
     std::getline(std::cin, input);
