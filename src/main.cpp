@@ -31,6 +31,11 @@ void encryptionMenu(){
     std::cout << "=                        Encryption                         =\n";
     std::cout << "=                                                           =\n";
     std::cout << "=          Press 'e' at anytime to return to main menu      =\n";
+    std::cout << "=                                                           =\n";
+    std::cout << "=               Please select type of encryption:           =\n";
+    std::cout << "=                                                           =\n";
+    std::cout << "=               1.) CaesarCipher                            =\n";
+    
     std::cout << "=             Please enter file name to be encrypted:       =\n";
     std::getline(std::cin, input);
     std::cin.ignore();
