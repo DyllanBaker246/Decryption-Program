@@ -2,9 +2,11 @@
 Program will take file as input, perform decryption algorithm, and give confidence report based on similarity between known word data set.
 # To Do List:
 - create ui for encryption menu
+- - This is just a test, idk what it will do (my commit for the day)
 - create ui for decryption menu
 - CodeBreaker::findshift works with multiple words
 - Create Encryption Class: given integer value, will encrypt a string based on corresponding alg
+
 # Class Descriptions:
 ## Caesar Cipher
 - Given plain text, shifts chars based on integer value
